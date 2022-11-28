@@ -74,8 +74,7 @@ let users = [
   ];
 
 const phones = users.filter(user => user.balance.slice(1).split(',').join('') > 2000).map(user => user.phone);
-const balancesArr = users.map(user => user.balance.slice(1).split(',').join(''));
-const sumOfBalance = balancesArr.reduce((a, b) => +a + +b);
+const sumOfBalance =users.reduce((sum, user1) => sum + +user1.balance.slice(1).split(',').join(''), 0);
 
 
 console.log(sumOfBalance);
